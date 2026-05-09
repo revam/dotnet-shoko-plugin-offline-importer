@@ -17,7 +17,7 @@ A [Shoko](https://shokoanime.com/) plugin responsible for importing releases bas
    ```
    https://raw.githubusercontent.com/revam/dotnet-shoko-plugin-offline-importer/stable/manifest.json
    ```
-3. Go to **Server → Plugins → Browse** and find **Offline Importer**.
+3. Go to **Settings → Plugins → Browse** and find **Offline Importer**.
 4. Click **Install** on the desired version.
 5. Restart Shoko.
 
