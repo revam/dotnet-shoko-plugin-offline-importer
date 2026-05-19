@@ -394,7 +394,7 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
                     }
 
                     _logger.LogDebug("Attempting prequel {PrequelAnimeName} for {AnimeName}. (Anime={AnimeID},PrequelAnime={PrequelAnimeID})", prequelSearch.DefaultTitle.Value, anime.DefaultTitle.Value, anime.ID, prequelSearch.ID);
-                    var finalResult = await GetReleaseInfoForMatchAndAnime(match, prequelSearch, cancellationToken, depth, year, animeType, followSeasonNumber, currentAirDate).ConfigureAwait(false);
+                    var finalResult = await GetReleaseInfoForMatchAndAnime(match, prequelSearch, cancellationToken, depth, year, animeType, followSeasonNumber, currentAirDate.ToDateTime()).ConfigureAwait(false);
                     if (finalResult is not null)
                     {
                         _logger.LogDebug("Found prequel {PrequelAnimeName} for {AnimeName}. (Anime={AnimeID},PrequelAnime={PrequelAnimeID})", prequelSearch.DefaultTitle.Value, anime.DefaultTitle.Value, anime.ID, prequelSearch.ID);
@@ -478,7 +478,7 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
                     }
 
                     _logger.LogDebug("Attempting sequel {SequelAnimeName} for {AnimeName}. (Anime={AnimeID},SequelAnime={SequelAnimeID})", sequelSearch.DefaultTitle.Value, anime.DefaultTitle.Value, anime.ID, sequelSearch.ID);
-                    var finalResult = await GetReleaseInfoForMatchAndAnime(match, sequelSearch, cancellationToken, depth + 1, year, animeType, followSeasonNumber, currentAirDate).ConfigureAwait(false);
+                    var finalResult = await GetReleaseInfoForMatchAndAnime(match, sequelSearch, cancellationToken, depth + 1, year, animeType, followSeasonNumber, currentAirDate.ToDateTime()).ConfigureAwait(false);
                     if (finalResult is not null)
                     {
                         _logger.LogDebug("Found sequel {SequelAnimeName} for {AnimeName}. (Anime={AnimeID},SequelAnime={SequelAnimeID})", sequelSearch.DefaultTitle.Value, anime.DefaultTitle.Value, anime.ID, sequelSearch.ID);
