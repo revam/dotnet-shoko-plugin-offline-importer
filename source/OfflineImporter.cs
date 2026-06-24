@@ -318,8 +318,8 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
         )
         {
             var method = _configurationProvider.Load().AllowRemote
-                ? AnidbRefreshMethod.Cache | AnidbRefreshMethod.Remote | AnidbRefreshMethod.SkipTmdbUpdate
-                : AnidbRefreshMethod.Cache | AnidbRefreshMethod.SkipTmdbUpdate;
+                ? AnidbRefreshMethod.Cache | AnidbRefreshMethod.Remote | AnidbRefreshMethod.SkipSupplementaryUpdate
+                : AnidbRefreshMethod.Cache | AnidbRefreshMethod.SkipSupplementaryUpdate;
             _logger.LogDebug("Refreshing AniDB Anime {AnimeName} (Anime={AnimeID},Method={Method})", searchResult.DefaultTitle.Value, searchResult.ID, method.ToString());
             try
             {
