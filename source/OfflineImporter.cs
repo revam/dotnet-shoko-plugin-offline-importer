@@ -221,15 +221,15 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
 
         if (
             releaseInfo is not null &&
-            releaseInfo.CrossReferences.Any(xref => xref.GetAnidbAnimeID() is null or <= 0) &&
+            releaseInfo.CrossReferences.Any(xref => xref.AnidbAnimeID is null or <= 0) &&
             animeId is > 0 &&
             _anidbService.SearchAnimeByID(animeId.Value) is not null
         )
         {
             foreach (var xref in releaseInfo.CrossReferences)
             {
-                if (xref.GetAnidbAnimeID() is null or <= 0)
-                    xref.ProviderIDs[CrossReferenceIDs.AniDB_Anime] = animeId.Value.ToString();
+                if (xref.AnidbAnimeID is null or <= 0)
+                    xref.AnidbAnimeID = animeId;
             }
         }
 
@@ -349,7 +349,7 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
             return new ReleaseInfo()
             {
                 ID = $"{IdPrefix}{anime.ID}-{episode.ID}",
-                CrossReferences = [new ReleaseVideoCrossReference().ForAniDB(episode.ID, anime.ID)],
+                CrossReferences = [new ReleaseVideoCrossReference() { AnidbAnimeID = anime.ID, AnidbEpisodeID = episode.ID }],
             };
         }
 
@@ -533,8 +533,8 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
                 {
                     ID = IdPrefix + episodes.Select(x => $"{anime.ID}-{x.ID}").Join(','),
                     CrossReferences = [
-                        new ReleaseVideoCrossReference().ForAniDB(allEpisodes[0].ID, anime.ID, start, end),
-                        .. episodes.Select(x => new ReleaseVideoCrossReference().ForAniDB(x.ID, anime.ID)),
+                        new ReleaseVideoCrossReference() { AnidbAnimeID = anime.ID, AnidbEpisodeID = allEpisodes[0].ID, PercentageStart = start, PercentageEnd = end },
+                        .. episodes.Select(x => new ReleaseVideoCrossReference() { AnidbAnimeID = anime.ID, AnidbEpisodeID = x.ID }),
                     ],
                 };
             }
@@ -687,7 +687,7 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
         var releaseInfo = new ReleaseInfo()
         {
             ID = IdPrefix + episodes.Select(x => $"{anime.ID}-{x.ID}").Join(','),
-            CrossReferences = episodes.Select(x => new ReleaseVideoCrossReference().ForAniDB(x.ID, anime.ID)).ToList(),
+            CrossReferences = episodes.Select(x => new ReleaseVideoCrossReference() { AnidbAnimeID = anime.ID, AnidbEpisodeID = x.ID }).ToList(),
         };
         return releaseInfo;
     }
@@ -768,7 +768,13 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
             previousPercentage = percentageEnd;
             if (previousPercentage >= 100)
                 previousPercentage = 0;
-            crossReferences.Add(new ReleaseVideoCrossReference().ForAniDB(episodeId, animeId, percentageStart, percentageEnd));
+            crossReferences.Add(new ReleaseVideoCrossReference
+            {
+                AnidbAnimeID = animeId,
+                AnidbEpisodeID = episodeId,
+                PercentageStart = percentageStart,
+                PercentageEnd = percentageEnd,
+            });
         }
 
         return Task.FromResult<ReleaseInfo?>(new() { ID = IdPrefix + releaseId, CrossReferences = crossReferences, });
@@ -1064,7 +1070,7 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
         foreach (var xref in info.CrossReferences)
         {
             var isValid = false;
-            if (_metadataService.GetEpisodeByProviderID(xref.GetAnidbEpisodeID() ?? 0, IMetadataService.ProviderName.AniDB) is not IAnidbEpisode anidbEpisode)
+            if (_metadataService.GetEpisodeByProviderID(xref.AnidbEpisodeID, IMetadataService.ProviderName.AniDB) is not IAnidbEpisode anidbEpisode)
                 return false;
             foreach (var range in ranges)
             {
