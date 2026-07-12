@@ -14,6 +14,22 @@
   "thumbnail": null,
   "releases": [
     {
+      "version": "1.0.4",
+      "tag": "v1.0.4",
+      "source_revision": "e4658dea5944302699da67b83cdb68668805d356",
+      "released_at": "2026-07-12T00:22:32Z",
+      "channel": "Stable",
+      "release_notes": null,
+      "archives": [
+        {
+          "runtime": "any",
+          "abstraction": "6.0.0",
+          "url": "https://github.com/revam/dotnet-shoko-plugin-offline-importer/releases/download/v1.0.4/Shoko.Plugin.OfflineImporter-v1.0.4-any.zip",
+          "checksum": "1776c4118685c70aaf9c707f38a74d529f51d442a43cfcfafa16db8b38a1d6ee"
+        }
+      ]
+    },
+    {
       "version": "1.0.3",
       "tag": "v1.0.3",
       "source_revision": "97dab2f60c1d13ab8f9575e44775c0b881f438e8",
