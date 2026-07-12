@@ -7,7 +7,7 @@
         <Title>Shoko Offline Importer</Title>
         <Authors>revam</Authors>
         <RepositoryUrl>https://github.com/revam/dotnet-shoko-plugin-offline-importer</RepositoryUrl>
-        <Version>1.0.3</Version>
+        <Version>1.0.4</Version>
         <Configurations>Debug;Release</Configurations>
         <Platforms>AnyCPU;x64</Platforms>
         <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
