@@ -1,97 +1,10 @@
 {
+  "$schema": "https://raw.githubusercontent.com/ShokoAnime/ShokoServer/master/Shoko.BuildTools/manifest.schema.json",
   "id": "72a6ff39-2bff-534c-9216-d03cd38e7346",
+  "type": "package",
   "name": "Offline Importer",
-  "overview": "Plugin responsible for importing releases based on file names.",
+  "overview": "This is a stub manifest, not the published one. If you are reading it as a repository feed, you are on the wrong branch: the published identity and releases live on this repository's `metadata` branch, at `manifest.json`. CI pulls that file over this one before it builds anything. This copy exists so a local build has an id to match against.",
   "authors": "revam",
   "repository_url": "https://github.com/revam/dotnet-shoko-plugin-offline-importer",
-  "homepage_url": null,
-  "tags": [
-    "release-provider",
-    "importer",
-    "offline",
-    "filename"
-  ],
-  "thumbnail": null,
-  "releases": [
-    {
-      "version": "1.0.4",
-      "tag": "v1.0.4",
-      "source_revision": "e4658dea5944302699da67b83cdb68668805d356",
-      "released_at": "2026-07-12T00:22:32Z",
-      "channel": "Stable",
-      "release_notes": null,
-      "archives": [
-        {
-          "runtime": "any",
-          "abstraction": "6.0.0",
-          "url": "https://github.com/revam/dotnet-shoko-plugin-offline-importer/releases/download/v1.0.4/Shoko.Plugin.OfflineImporter-v1.0.4-any.zip",
-          "checksum": "1776c4118685c70aaf9c707f38a74d529f51d442a43cfcfafa16db8b38a1d6ee"
-        }
-      ]
-    },
-    {
-      "version": "1.0.3",
-      "tag": "v1.0.3",
-      "source_revision": "97dab2f60c1d13ab8f9575e44775c0b881f438e8",
-      "released_at": "2026-06-24T23:15:54Z",
-      "channel": "Stable",
-      "release_notes": null,
-      "archives": [
-        {
-          "runtime": "any",
-          "abstraction": "6.0.0",
-          "url": "https://github.com/revam/dotnet-shoko-plugin-offline-importer/releases/download/v1.0.3/Shoko.Plugin.OfflineImporter-v1.0.3-any.zip",
-          "checksum": "19badf3856deb6fd581aa744733a98a8ce45ca254a5e076a0b16e309b1afcd18"
-        }
-      ]
-    },
-    {
-      "version": "1.0.2",
-      "tag": "v1.0.2",
-      "source_revision": "e20a73a19026b5965e7415a22488f53c23a3c083",
-      "released_at": "2026-06-18T00:07:24Z",
-      "channel": "Stable",
-      "release_notes": null,
-      "archives": [
-        {
-          "runtime": "any",
-          "abstraction": "6.0.0",
-          "url": "https://github.com/revam/dotnet-shoko-plugin-offline-importer/releases/download/v1.0.2/Shoko.Plugin.OfflineImporter-v1.0.2-any.zip",
-          "checksum": "f9416819e5953915904af59b7a1a103b411a93b79ecb1510e5d6310f8d7b261f"
-        }
-      ]
-    },
-    {
-      "version": "1.0.1",
-      "tag": "v1.0.1",
-      "source_revision": "fa7a158f14907899cc604a957054d414c58bf4ed",
-      "released_at": "2026-05-19T11:54:01Z",
-      "channel": "Stable",
-      "release_notes": null,
-      "archives": [
-        {
-          "runtime": "any",
-          "abstraction": "6.0.0",
-          "url": "https://github.com/revam/dotnet-shoko-plugin-offline-importer/releases/download/v1.0.1/Shoko.Plugin.OfflineImporter-v1.0.1-any.zip",
-          "checksum": "6224d3dcae0145ba0429684e7980296edbc4f73a36e09a8b5a070e71cef8c33b"
-        }
-      ]
-    },
-    {
-      "version": "1.0.0",
-      "tag": "v1.0.0",
-      "source_revision": "b3540be19b715b2946c2ddc2b898b216fa216306",
-      "released_at": "2026-04-28T18:02:26Z",
-      "channel": "Stable",
-      "release_notes": null,
-      "archives": [
-        {
-          "runtime": "any",
-          "abstraction": "6.0.0",
-          "url": "https://github.com/revam/dotnet-shoko-plugin-offline-importer/releases/download/v1.0.0/Shoko.Plugin.OfflineImporter-v1.0.0-any.zip",
-          "checksum": "334643c45ee482a17317d4a8ef90c769f227579e8d2851a337dec26416dc5921"
-        }
-      ]
-    }
-  ]
+  "releases": []
 }

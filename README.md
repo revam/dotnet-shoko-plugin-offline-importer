@@ -15,7 +15,7 @@ A [Shoko](https://shokoanime.com/) plugin responsible for importing releases bas
 1. Open the Shoko Web UI and navigate to **Settings → Plugins → Repositories**.
 2. Add the manifest URL:
    ```
-   https://raw.githubusercontent.com/revam/dotnet-shoko-plugin-offline-importer/stable/manifest.json
+   https://raw.githubusercontent.com/revam/dotnet-shoko-plugin-offline-importer/metadata/manifest.json
    ```
 3. Go to **Settings → Plugins → Browse** and find **Offline Importer**.
 4. Click **Install** on the desired version.
