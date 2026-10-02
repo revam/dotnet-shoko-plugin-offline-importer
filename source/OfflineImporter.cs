@@ -1271,7 +1271,7 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
             new()
             {
                 Name = "pipes",
-                Regex = @"[\\|｜] (?<pre>.*) Season (?<season>\\d+) Episode (?<episode>\\d+)(?<post>.+)?\\.(?<extension>[a-z0-9]{1,10})$",
+                Regex = @"[\|｜] (?<pre>.*) Season (?<season>\d+) Episode (?<episode>\d+)(?<post>.+)?\.(?<extension>[a-z0-9]{1,10})$",
                 Type = CustomRuleType.PrePost,
             {
             new()
@@ -1298,7 +1298,7 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
             new()
             {
                 Name = "kamba-special",
-                Regex = @"^(?<pre>.+)? (?<episode>\\d+) (?<post>.+)?\\.(?<extension>[a-z0-9]{1,10})$",
+                Regex = @"^(?<pre>.+)? (?<episode>\d+) (?<post>.+)?\.(?<extension>[a-z0-9]{1,10})$",
                 Type = CustomRuleType.PrePost,
             },
             new()
