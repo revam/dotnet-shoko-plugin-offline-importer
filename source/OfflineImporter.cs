@@ -1270,6 +1270,12 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
             },
             new()
             {
+                Name = "pipes",
+                Regex = @"[\|｜] (?<pre>.*) Season (?<season>\d+) Episode (?<episode>\d+)(?<post>.+)?\.(?<extension>[a-z0-9]{1,10})$",
+                Type = CustomRuleType.PrePost,
+            {
+            new()
+            {
                 Name = "default",
                 Regex = @"^(?<pre>.*?(?<!(?:PV|CM|Preview|Trailer|Commercial|Menu|Jump Festa Special)[\._ ]*(-[\._ ]*)?))[\._ ]*(?:-[\._ ]*)?(?<=\b|_)(?:(?:s(?<season>\d+(?!\d+)))?(?:(?:OVA|OAD)[\._ ]*|Vol(?:\.|ume)[\._ ]*|(?<=\b|_)(?<isOther>o)|e(?:p(?:isode|s)?)?[\._ ]*|(?=(?:\d+(?:(?!-?\d+[pi])-\d+?|\.5)?)(?:v\d{1,2})?(?:[\._ ]*END(?=\b|_))?[\._ ]*\.[a-z0-9]{1,10}$)|(?<=[\._ ]*-[\._ ]*)(?=(?:\d+(?:(?!-\d+[pi])-\d+?|\.5)?)(?:[\._ ]*END(?=\b|_))?[\._ ]*(?:[\._ ]*-[\._ ]*|[\[\({「]))|(?<=[\._ ]*-[\._ ]*)(?=(?:(?!(?:19|2[01])\d{2})\d+(?:(?!-\d+[pi])-\d+?|\.5)?)(?![\._ ]*-[\._ ]*))|(?=(?:(?!\d+[\. _]\(\d{4}\))\d+(?:(?!-\d+[pi])-\d+?|\.5)?)(?:v\d{1,2})?(?:[\._ ]*END(?=\b|_))?[\._ ]*[\[\({「])|(?<=s\d+) )(?<episode>\d+(?:(?!-\d+[pi])-\d+?|\.5)?)(?!(?:\.\d)?(?:\]|\))|-(?!\d+[pi])\d+|(?<!(?:e(?:pisode|ps?)?)?\k<episode>)[\._ ]*(?:OVA|OAD)| (?:nc)?(?:ed|op))|(?<!jump[\. _]festa[\. _])s(?:p(?:ecials?)?)?[ \.]?(?<specialNumber>\d+(?!(?:\.\d)?(?:\]|\))| \d+|[\. _]?-[\. _]?(?:E(?:p(?:isode)?)?[\. _]?)?\d+))(?![\. _-]*(?:nc)?(?:ed|op))|(?<=\b|_)(?<![a-z0-9])(?:s(?<season>\d+(?!\d+))(?:[\. _]*-)?[\. _]*)?(?:(?<isCreditless>nc|[Cc]reditless|NC)[\s_.]*)?(?<isThemeSong>ED|OP|Opening|Ending)(?![a-z]{2,})(?:[\._ ]*(?<episode>\d+(?!\d*p)))?(?<themeSuffix>(?<=(?:OP|ED)(?:[\._ ]*\d+)?)(?:\.\d+|[a-z]))?(?=\b|_))(?:v(?<version>\d{1,2}))?(?=\b|_)(?:[\._ ]*END)?[\._ ]*(?:-[\._ ]*)?(?<post>.+)?\.(?<extension>[a-z0-9]{1,10})$",
                 Type = CustomRuleType.PrePost,
@@ -1288,6 +1294,12 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
             {
                 Name = "reversed-1",
                 Regex = @"^\[?(?<episode>\d+)\s*-\s*(?<showName>[^[]+)\]\s*(?:\[[^\]]*\])*\.(?<extension>[a-zA-Z0-9_\-+]+)$",
+            },
+            new()
+            {
+                Name = "kamba-special",
+                Regex = @"^(?<pre>.+)? (?<episode>\d+) (?<post>.+)?\.(?<extension>[a-z0-9]{1,10})$",
+                Type = CustomRuleType.PrePost,
             },
             new()
             {
