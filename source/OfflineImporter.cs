@@ -1273,7 +1273,7 @@ public partial class OfflineImporter : IReleaseInfoProvider<OfflineImporter.Conf
                 Name = "pipes",
                 Regex = @"[\|｜] (?<pre>.*) Season (?<season>\d+) Episode (?<episode>\d+)(?<post>.+)?\.(?<extension>[a-z0-9]{1,10})$",
                 Type = CustomRuleType.PrePost,
-            {
+            },
             new()
             {
                 Name = "default",
