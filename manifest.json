@@ -12,6 +12,22 @@
   ],
   "releases": [
     {
+      "version": "1.1.0",
+      "tag": "v1.1.0",
+      "released_at": "2026-10-03T16:49:08.4090427Z",
+      "channel": "Stable",
+      "release_notes": "Two new parse rules recognise more file names: \u0060pipes\u0060, for names like \u0060Show | Title Season 1 Episode 2.mkv\u0060, and \u0060kamba-special\u0060, for a bare episode number between the show and the rest of the name. Thanks to @Kcronshaw for both (#2).\n\nRebuilt against the abstractions \u00606.0.0-alpha.98\u0060 release. Imports otherwise behave as before.\n\nRequires Shoko Server with abstractions \u00606.0.0-alpha.98\u0060.",
+      "dependencies": [],
+      "archives": [
+        {
+          "runtime": "any",
+          "abstraction": "6.0.0",
+          "url": "https://github.com/revam/dotnet-shoko-plugin-offline-importer/releases/download/v1.1.0/OfflineImporter-v1.1.0-any.zip",
+          "checksum": "sha256:f9b6928fef6f1c79f7a6793019d9ef3fa99a75da13cdc92a496c2407f5c8833a"
+        }
+      ]
+    },
+    {
       "version": "1.0.6",
       "tag": "v1.0.6",
       "released_at": "2026-09-30T15:53:33.6139134Z",
